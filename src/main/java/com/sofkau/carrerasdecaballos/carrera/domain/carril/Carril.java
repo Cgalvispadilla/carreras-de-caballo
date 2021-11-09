@@ -32,7 +32,7 @@ public class Carril extends AggregateRoot {
         this.posicion = posicion;
         this.longitudCarrilMetros = longitudCarrilMetros;
         subscribe(new CarrilEventChange(this));
-        appendChange(new CarrilCreado(caballo, juegoID, estado, longitudCarrilMetros)).apply();
+        appendChange(new CarrilCreado(caballo, juegoID, estado, longitudCarrilMetros), juegoID.value()).apply();
     }
 
     public static Carril from(CarrilID carrilID, List<DomainEvent> eventList) {
@@ -41,8 +41,8 @@ public class Carril extends AggregateRoot {
         return carril;
     }
 
-    public void MoverCaballo(Integer distancia){
-        appendChange(new CaballoDesplazado(new Posicion(distancia,longitudCarrilMetros()))).apply();
+    public void MoverCaballo(Integer distancia, JuegoID juegoID){
+        appendChange(new CaballoDesplazado(new Posicion(distancia,longitudCarrilMetros())),juegoID.value()).apply();
     }
 
     public Integer longitudCarrilMetros(){
