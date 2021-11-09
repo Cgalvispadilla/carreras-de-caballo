@@ -31,7 +31,7 @@ public class Juego extends AggregateRoot {
     }
 
     public void crearJugador(JugadorID entityId, Nombre nombre) {
-        appendChange(new jugadorCreado(entityId, nombre)).apply();
+        appendChange(new JugadorCreado(entityId, nombre)).apply();
     }
 
     public void iniciarJuego() {

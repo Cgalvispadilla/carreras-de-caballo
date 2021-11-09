@@ -4,11 +4,11 @@ import com.sofkau.carrerasdecaballos.carrera.domain.generic.DomainEvent;
 import com.sofkau.carrerasdecaballos.carrera.domain.juego.values.JugadorID;
 import com.sofkau.carrerasdecaballos.carrera.domain.juego.values.Nombre;
 
-public class jugadorCreado extends DomainEvent {
+public class JugadorCreado extends DomainEvent {
     private final JugadorID entityId;
     private final Nombre nombre;
 
-    public jugadorCreado(JugadorID entityId, Nombre nombre) {
+    public JugadorCreado(JugadorID entityId, Nombre nombre) {
         super("juego.jugardorcreado");
         this.entityId = entityId;
         this.nombre = nombre;
