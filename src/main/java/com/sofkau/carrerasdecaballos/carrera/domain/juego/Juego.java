@@ -9,10 +9,10 @@ import java.util.List;
 import java.util.Map;
 
 public class Juego extends AggregateRoot {
-    private Map<JugadorID, Jugador> jugadores;
-    private Pista pista;
-    private Podio podio;
-    private JuegoActivo juegoActivo;
+    protected Map<JugadorID, Jugador> jugadores;
+    protected Pista pista;
+    protected Podio podio;
+    protected JuegoActivo juegoActivo;
 
     public Juego(JuegoID juegoID, Pista pista) {
         super(juegoID.value());
@@ -54,9 +54,11 @@ public class Juego extends AggregateRoot {
     public Map<JugadorID, Jugador> jugadores() {
         return Map.copyOf(jugadores);
     }
+
     public Boolean jugando() {
         return juegoActivo.value();
     }
+
     public Pista obtenerPista() {
         return pista;
     }

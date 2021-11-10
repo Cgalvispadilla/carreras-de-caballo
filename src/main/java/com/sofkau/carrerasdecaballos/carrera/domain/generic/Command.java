@@ -2,6 +2,8 @@ package com.sofkau.carrerasdecaballos.carrera.domain.generic;
 
 import java.time.Instant;
 
+import java.time.Instant;
+
 public abstract class Command {
     private String type;
     private Instant instant;
